@@ -1,11 +1,8 @@
-<?php
-include ("logic_world.php");
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	
+		<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!----------- Bootstrap css---------->
@@ -14,6 +11,7 @@ include ("logic_world.php");
 
 
 <!----------- Bootstrap js---------->
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -31,22 +29,20 @@ include ("logic_world.php");
 	<title>Covid_19 Tracker</title>
 </head>
 <body>
-	<div>
+  <div>
 		<a href="/virus1" class="far fa-hand-point-left"> Go to Back</a>
 		 <div class="container-fluid bg-light p-5 text-center my-3 corona_style">
-    	    <h2 class="text-uppercase text-center">COVID_19 LIVE UPDATES OF  THE WORLD</h2>
+    	    <h2 class="text-uppercase text-center">COVID_19 GLOBAL LIVE UPDATES </h2>
 
-		<h5>An open source project of<a class="text-danger" href="http://www.bubhopal.ac.in" target="_blank"> Buit, Barkatullah University Bhopal</a> to keep track all the COVID_19 cases around the World. </h5>
+		<h5>An open source project of<a class="text-danger" href="http://www.bubhopal.ac.in" target="_blank"> Buit, Barkatullah University Bhopal</a> to keep track all the COVID_19 cases around the Nation. </h5>
 	</div>
 	</div>
-	
 
 
 
-
-
+  <!---- div helpline-------------->
 <style type="text/css">
-   /*---- div helpline-------------->*/
+ 
   .div_help{
     background-color: #ffed75;
   }
@@ -56,6 +52,7 @@ include ("logic_world.php");
 
 
 </style>
+
 <div class="container-fluid div_help" >
   <div class="container">
     <div class="row div_text">
@@ -73,79 +70,24 @@ include ("logic_world.php");
   </div>
 
 
-	<div class="container my-5">
-		<div class="row text-center">
-			<div class="col-4 text-warning">
-				<h5>Coronavirus Cases:</h5>
-				<?php echo number_format($total_confirmed); ?>
-			</div>
-			<div class="col-4 text-success">
-				<h5>Recovered:</h5>
-				<?php echo number_format($total_recovered); ?>
-			</div>
-			<div class="col-4 text-danger">
-				<h5>Deaths:</h5>
-				<?php echo number_format( $total_deaths); ?>
-			</div>
-		</div>
-		<div class="container bg-light p-3 my-3 text-center">
-			<h5 class="text-info">"Prevention is the cure."</h5>
-			<p class="text-muted">Stay Indoor Stay Safe.</p>
-		</div>
-	</div>
-	<div class="container-fluid">
-		<div class="table-responsive">
-			<table class="table ">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col"> Countries</th>
-					<th scope="col"> Confirmed</th>
-					<th scope="col">Recovered</th>
-					<th scope="col">Deceased</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php foreach ($data as $key => $value) {
-					$increase = $value[$days_count]['confirmed'] - $value[$days_count_prev]['confirmed']
-					
-				  ?>
-				  	<tr>
-				  		<th><?php echo $key;?></th>
-				  		<td>
-				  			<?php echo $value[$days_count]['confirmed'];?>
-				  			<?php if($increase !=0){?>
-				  			<small class="text-danger pl-3"><i class="fas fa-arrow-up"></i><?php echo $increase;?></small>
-				  			<?php }?>
-				  		</td>
-				  		<td>
-				  			<?php echo $value[$days_count]['recovered'];?>
-				  		</td>
-				  		<td>
-				  			<?php echo $value[$days_count]['deaths'];?>
-				  		</td>
-				  	</tr>
 
 
+<div class="embed-responsive embed-responsive-21by9 mt-5 mb-5" style="height: 30em;">
+  <iframe class="embed-responsive-item" src="https://app.developer.here.com/coronavirus"></iframe>
+</div>
+
+ <div class="container-fluid bg-light p-5 text-center my-3 corona_style">
+          <h2 class="text-uppercase text-center">COVID_19 Testing Center in india</h2>
+        </div>
 
 
-
-				<?php }?>
-			</tbody>
-		</table>
-			
-		</div>
-		
-	</div>
+<div class='tableauPlaceholder' id='viz1589626339948' style='position: relative'><noscript><a href='https:&#47;&#47;corona.health-check.in&#47;testing-centres'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;COVID19TestingCentresInIndia-Updated-Responsive&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='COVID19TestingCentresInIndia-Updated-Responsive&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;COVID19TestingCentresInIndia-Updated-Responsive&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1589626339948');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='320px';vizElement.style.maxWidth='800px';vizElement.style.width='100%';vizElement.style.minHeight='477px';vizElement.style.maxHeight='827px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='320px';vizElement.style.maxWidth='800px';vizElement.style.width='100%';vizElement.style.minHeight='477px';vizElement.style.maxHeight='827px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
 
-
-
-
-
+<!-------------///////top cursor ////////////////---->
 <div class="container scrolltop float-right pr-5">
   <i class="fa fa-arrow-up" onclick="topFunction()" id="myBtn"></i> 
 </div>
-
 <!------/////////////// footer---->
 <footer id="sticky-footer" class="py-4 bg-dark text-white-50 " >
     <div class="container text-center mt-5">
@@ -166,13 +108,9 @@ include ("logic_world.php");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-
-
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 
+<!-----------///// Top cursor script/////// -->	
 
   <script type="text/javascript">
 

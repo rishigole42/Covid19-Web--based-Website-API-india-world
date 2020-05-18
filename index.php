@@ -1,14 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Covid_19 in India</title>
+
+	<!-------sweet alert------>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	
+	
 	<?php include('link/links.php'); ?>
 	<?php include('css/style.php'); ?>
+
+
+<!-------- modal style------>
+<style>
+.tab-pane {
+    border:solid 1px #1589b4;
+    width:100%;
+    background-color:#fff3cd;
+    padding:20px;
+     border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+
+}
+
+.ImpText1 {
+padding: 9px;border-radius: 3px; min-height: 20px;margin-bottom: 5px;border: 1px solid #e3e3e3;background-color: #ffffff;
+}
+.ImpText2 {
+padding: 9px;border-radius: 3px; min-height: 20px;margin-bottom: 5px;background-color: #f5f5f5;border: 1px solid #e3e3e3;
+}
+ </style>
+<script>
+$(document).ready(function(){
+   $("#myModal").modal();
+});
+</script> 
 </head>
 <body>
 
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="max-width: 701px;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: #ea5653">
+		<div class="col-md-6">
+          <h5 class="modal-title"><i class="fas fa-bell"></i> Important Alerts</h5>
+		</div> 		
+		<div class="col-md-6">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		</div>
+		 
+        </div>
+        <div class="modal-body">
+          <div class="">
+    <div  class="tab-pane">
+
+        <div class="ImpText1" >Guidelines  for Reducing the Risk of Novel Coronavirus COVID-19 &nbsp;<a href="awarness_material/awarness_eng_hind.pdf" target="_blank"><font color="#228dff">Click Here to View</font></a><img src="new.gif">
+        </div>
+
+        <div>
+        	
+        </div>
+
+
+        <div class="ImpText2">Download the Aarogya Setu <img src="images/arogya.png"> App &nbsp;For Android  
+         <a href="http://bit.ly/AarogyaSetu_PS" target="_BLANK" title="For Android"><img src="images/android.png"></a> &nbsp;For iPhone &nbsp;<a href="https://apple.co/2X1KMzO" target="_BLANK" title="For iPhone"><img src="images/apple.png"></a> &nbsp;<img src="new.gif">
+        </div>
+
+        <div class="ImpText1" >Video on Covid-19 awareness for community,Hindi&nbsp;<a href="https://youtu.be/ykZJ-jcE-Do" target="_blank"><font color="#228dff">Click Here to View</font></a><img class="ml-4" src="new.gif">
+        </div>
+
+
+
+        <div class="ImpText2">Apply for Movement Pass During Covid-19 Lockdown &nbsp;<a href="pass.php" target="_blank"><font color="#228dff">Click Here to View</font></a><img src="new.gif">                
+        </div>
+
+</div>
+</div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+<!-- modal end -->
+
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 ">
-  <a class="navbar-brand pl-3" href="/virus">COVID_19</a>
+
+  <a class="navbar-brand pl-3" href="/virus1">COVID_19</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -16,7 +99,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto text-center   text-capitalize pr-3">
       <li class="nav-item">
-        <a class="nav-link" href="/virus">home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/virus1">home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#aboutid">about</a>
@@ -38,10 +121,12 @@
       <li class="nav-item">
         <a class="nav-link" href="#contactid">Report Covid_19</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="pass.php">Apply For E_Pass<img src="new.gif"></a>
+      </li>
   </ul>
   </div>
 </nav>
-
 <div class="main_header">
 	<div class="row w-100 h-75 mr-0">
 		<div class="col-lg-5 col-md-5 col-12 order-lg-1 order-2">
@@ -59,6 +144,44 @@
 </div>
 
 
+<!---- div helpline-------------->
+<style type="text/css">
+ 
+  .div_help{
+    background-color: #ffed75;
+  }
+  .div_text{
+     color: #b51714;
+  }
+
+
+</style>
+
+<div class="container-fluid div_help mb-5" >
+  <div class="container">
+    <div class="row div_text">
+      
+      <div class="fas fa-phone-square-alt">
+        <strong> Covid_19 Helpline Number :</strong>+91-11-23978046
+        <strong class="ml-4 fas fa-phone-square-alt">Toll Free :</strong> 1075  
+        <strong class="ml-2 fas fa-envelope-square">Helpline Email ID : ncov2019@gov.in</strong>    
+        <strong class="ml-5"> Download Arogya Setu</strong> <img src="images/arogya.png"> App &nbsp; 
+         <a href="http://bit.ly/AarogyaSetu_PS" target="_BLANK" title="For Android"><img src="images/android.png"></a>
+          &nbsp; &nbsp;<a href="https://apple.co/2X1KMzO" target="_BLANK" title="For iPhone"><img src="images/apple.png"></a>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+<!------- Map data-------->
+<div class="card bg-dark text-white">
+  <img class="card-img" src="images/map.png" height="200px" width="100px"  alt="Card image">
+  <div class="card-img-overlay">
+    <h3 class="card-title text-dark text-center">See areas affected by COVID-19</h3>
+    	<a class="btn btn-primary btn-lg" href="map.php" role="button" style="margin-left: 40%;">Explore the map</a>
+  </div>
+</div>
 <!--***************** corona update************************** -->
 
 
@@ -67,7 +190,7 @@
     <div class="container-fluid bg-light p-5 text-center my-3 corona_style">
     	    <h2 class="text-uppercase text-center">COVID_19 LIVE UPDATES OF  THE INDIA</h2>
 
-		<h5>An open source project of<a class="text-danger" href="http://www.bubhopal.ac.in"> Buit, Barkatullah University Bhopal</a> to keep track all the COVID_19 cases around the Nation. </h5>
+		<h5>An open source project of<a class="text-danger" href="http://www.bubhopal.ac.in" target="_blank"> Buit, Barkatullah University Bhopal</a> to keep track all the COVID_19 cases around the Nation. </h5>
 	</div>
   
   
@@ -120,6 +243,11 @@ while($i <$statecount){
     
   </div>
 </section>
+
+
+
+
+
 
 
 <!--- *****************about section******-->
@@ -368,7 +496,7 @@ while($i <$statecount){
   
   <div class="form-group">
     <label >Describe how you are feeling</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg" required></textarea>
   </div>
 <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
@@ -393,7 +521,7 @@ while($i <$statecount){
     <div class="container text-center mt-5">
       <h5>Designed & Developed CSE Department Team</h5>
       <p>Buit, Barkatullah University Bhopal</p>
-      <p>ContacUs- rishigole42@gmail.com</p>
+      <p>ContactUs- rishigole42@gmail.com</p>
     </div>
   </footer>
 
@@ -427,12 +555,10 @@ mybutton = document.getElementById('myBtn');
 
 </script>
 
-
-
-
-
 </body>
 </html>
+
+
 
 
 
@@ -464,13 +590,16 @@ if(isset($_POST['submit'])){
 	if($con){
 	?>
 	<script>
-		alert("Covid_19 Patients Reported Successfully Thanks!!!!!");
+		
+		
+		swal("Covid_19!"," Patients Reported Successfully Thanks!!","success");
+	
 	</script>
 	<?php 
 }else {
 	?>
 	<script>
-		alert("Not inserted");
+		swal("Covid_19", " Unable To Report Patients!" ,"error");
 	</script>
 	<?php
 }

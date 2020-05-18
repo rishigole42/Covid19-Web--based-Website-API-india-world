@@ -14,7 +14,7 @@ if($con){
 }else {
 	?>
 	<script>
-		alert("No connection");
+		swal("covid_19","Error Connection","error");
 	</script>
 	<?php
 }
