@@ -12,5 +12,5 @@ Project Dashboard
 </p>
 
 <p align="center">
-  Here's our Website <a href="http://web2.eu5.org/">API</a>.
+  Here's our <a href="https://web2.eu5.org/">Website</a>.
  </p>
