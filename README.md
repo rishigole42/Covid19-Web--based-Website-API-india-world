@@ -2,5 +2,4 @@
 Project Dashboard
 
 1.https://web2.eu5.org/
-2.http://rishigole.000webhostapp.com/
-3. google sites--- https://sites.google.com/view/covidindia19 
+2. google sites--- https://sites.google.com/view/covidindia19 
