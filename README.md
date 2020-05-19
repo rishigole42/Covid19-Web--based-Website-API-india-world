@@ -8,9 +8,9 @@ Project Dashboard
 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/rishigole42/Covid19-Web--based-Website-API-india-world/master/page%20demo%20screenshot.png">
+<img src="https://raw.githubusercontent.com/rishigole42/Covid19-Web--based-Website-API-india-world/master/page%20demo%20screenshot.png" width="100%">
 </p>
 
 <p align="center">
-  Here's our data <a href="http://web2.eu5.org/">API</a>.
+  Here's our Website <a href="http://web2.eu5.org/">API</a>.
  </p>
