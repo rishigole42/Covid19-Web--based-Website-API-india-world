@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<title>Covid_19 in India</title>
 
 	<!-------sweet alert------>
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 	
 	
@@ -42,7 +44,7 @@ $(document).ready(function(){
 
 <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog" style="max-width: 701px;">
+    <div class="modal-dialog" style="max-width: 800px;">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -71,13 +73,15 @@ $(document).ready(function(){
          <a href="http://bit.ly/AarogyaSetu_PS" target="_BLANK" title="For Android"><img src="images/android.png"></a> &nbsp;For iPhone &nbsp;<a href="https://apple.co/2X1KMzO" target="_BLANK" title="For iPhone"><img src="images/apple.png"></a> &nbsp;<img src="new.gif">
         </div>
 
-        <div class="ImpText1" >Video on Covid-19 awareness for community,Hindi&nbsp;<a href="https://youtu.be/ykZJ-jcE-Do" target="_blank"><font color="#228dff">Click Here to View</font></a><img class="ml-4" src="new.gif">
+        <div class="ImpText1" >Video on Covid-19 awareness for community, Hindi &nbsp;<a href="https://youtu.be/ykZJ-jcE-Do" target="_blank"><font color="#228dff">Click Here to View</font></a><img class="ml-4" src="new.gif">
         </div>
 
 
 
         <div class="ImpText2">Apply for Movement Pass During Covid-19 Lockdown &nbsp;<a href="pass.php" target="_blank"><font color="#228dff">Click Here to View</font></a><img src="new.gif">                
         </div>
+
+        <div class="ImpText1"> Covid_19 (Coronavirus)<img src="images/bacteria.png"> Awarness Quiz &nbsp;<a href="https://prixest.com/app/live.php?id=125" target="_blank"><font color="#228dff"> Click Here to view</font></a><img src="new.gif"></div>
 
 </div>
 </div>
@@ -192,18 +196,49 @@ $(document).ready(function(){
 
 		<h5>An open source project of<a class="text-danger" href="http://www.bubhopal.ac.in" target="_blank"> Buit, Barkatullah University Bhopal</a> to keep track all the COVID_19 cases around the Nation. </h5>
 	</div>
-  
+  <div class="container my-5">
+		<div class="row text-center">
+			<div class="col text-warning">
+				<h5>Confirmed Cases</h5>
+				<p id="confirmed"></p>
+				
+			</div>
+			<div class="col text-info">
+				<h5>Active Cases</h5>
+				<p id="active"></p>
+			</div>
+			<div class="col text-success">
+				<h5>Cured / Discharged</h5>
+				<p id="recovered"></p>				
+			</div>
+			<div class="col text-danger">
+				<h5>Deceased</h5>
+				<p id="deaths"></p>
+			</div>
+		</div>
+		<div class="container bg-light p-3 my-3 text-center">
+			<h5 class="text-info">"Prevention is the cure."</h5>
+			<p class="text-muted">Stay Indoor Stay Safe.</p>
+		</div>
+	</div>
+<div class="chart-container" style="position: relative;">
+	<canvas id="myChart" width="640" height="480"></canvas>
+</div>
+
+
   
   <div class="table-responsive">
 
-    <table class=" table table-bordered table-striped text-center table-fixed" id="tbval">
+    <table class=" table table-bordered table-striped text-center table-fixed mt-5" id="tbval">
       <tr>
+        <th class="text-capitalize">S.no</th>
         <th class="text-capitalize">Last Updated Time</th>
         <th class="text-capitalize">State</th>
         <th class="text-capitalize">Confirmed</th>
         <th class="text-capitalize">Active</th>
         <th class="text-capitalize">Recovered</th>
         <th class="text-capitalize">Deaths</th>
+        
       </tr>
     <?php
 
@@ -218,12 +253,15 @@ while($i <$statecount){
 
   ?>
   <tr>
+  	<td><?php echo ($i) ?></td>
     <td><?php echo $coronadata['statewise'][$i]['lastupdatedtime']?></td>
     <td><?php echo $coronadata['statewise'][$i]["state"] ?></td>
     <td><?php echo $coronadata['statewise'][$i]['confirmed']?></td>
     <td><?php echo $coronadata['statewise'][$i]['active'] ?></td>
     <td><?php echo $coronadata['statewise'][$i]['recovered'] ?></td>
     <td><?php echo $coronadata['statewise'][$i]['deaths'] ?></td>
+     
+
   </tr>
  
  
@@ -556,6 +594,102 @@ mybutton = document.getElementById('myBtn');
 </script>
 
 </body>
+
+<!---- chart js cdn----------->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	var url = "https://api.covid19india.org/data.json"
+
+	$.getJSON(url, function(data){
+		//console.log(data)
+
+		var total_active, total_recovered, total_deaths, total_confirmed
+
+
+
+		//chart js
+
+		var state = []
+		var confirmed = []
+		var recovered = []
+
+		var deaths = []
+
+		$.each(data.statewise, function(id, obj){
+			state.push(obj.state)
+			confirmed.push(obj.confirmed)
+			recovered.push(obj.recovered)
+			deaths.push(obj.deaths)
+		}) 
+
+
+		
+
+		state.shift()
+		confirmed.shift()
+		recovered.shift()
+		deaths.shift()
+
+		//console.log(state)
+
+		total_active = data.statewise[0].active
+		total_confirmed = data.statewise[0.].confirmed
+		total_recovered  =  data.statewise[0].recovered
+		total_deaths  = data.statewise[0].deaths
+
+		$("#active").append(total_active)
+		$("#confirmed").append(total_confirmed)
+		$("#recovered").append(total_recovered)
+		$("#deaths").append(total_deaths)
+
+
+		var myChart = document.getElementById('myChart').getContext('2d')
+
+
+		var chart = new Chart(myChart,{
+			type:'line',
+			data:{
+				labels:state,
+				datasets:[
+				{
+					label: "Confirmed Cases",
+					data: confirmed,
+					backgroundColor: "#f1c40f",
+					minBarLength:100
+				},
+				{
+					label: "Recoverd Cases",
+					data: recovered,
+					backgroundColor: "#2ecc71",
+					minBarLength:100
+				},
+				{
+					label: "Deceased",
+					data: deaths,
+					backgroundColor: "#e74c3c",
+					minBarLength:100
+				},
+
+				]
+			},
+			options:{}
+		})
+
+
+
+
+
+
+
+
+
+
+	})
+})
+</script>
+
 </html>
 
 

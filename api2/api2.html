@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Api-2</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+			$.ajax({
+			url : "https://api.rootnet.in/covid19-in/stats/latest",
+			type : "GET",
+			datatype : "JSON",
+			success : function(data){
+				console.log(data);
+				console.log( data.data.summary);
+
+				$.each(data.data.summary, function(key, value){
+					console.log(key +  ":" + value);
+
+				});
+			}
+		});
+	</script>
+
+</body>
+</html>

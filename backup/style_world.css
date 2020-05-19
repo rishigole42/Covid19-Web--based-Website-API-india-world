@@ -1,0 +1,37 @@
+
+
+html{
+	scroll-behavior: smooth;
+}
+
+
+body{
+	font-family: 'Baloo Thambi 2', cursive;
+}
+
+
+
+/*********** top scroll **************************/
+#myBtn {
+	display: none; /* Hidden by default*/
+	position: fixed;/*fixed sticky position*/
+	bottom: 40px; /* Placed button at the bottom of the page*/
+	right: 40px; /* Place the button 30 px from the right*/
+	z-index: 90; /* Make sure it does not overlap*/
+	border:none; /* Remove border*/
+	outline: none; /* Remove outline*/
+	background-color: #00A8FF; /* Set a background color*/
+	color: white; /* Text color */
+	cursor: pointer; /* Add a some pointer on hover */
+	padding: 17px; /*Some padding*/
+	border-radius: 10px; /* Rounded corners */
+}
+#myBtn:hover {
+	background: #606060; /* Add a dark-gry background on hover */
+}
+
+
+
+ 
+
+
