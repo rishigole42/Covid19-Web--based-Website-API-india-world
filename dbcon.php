@@ -1,8 +1,8 @@
 <?php
 
-$server = 'localhost';
-$user = 'root';
-$password = '';
+$server = 'remotemysql.com';
+$user = ' 9QcyuanIQ6';
+$password = ' rLPW4ig5Wt';
 $db ='covid_19';
 
 $con = mysqli_connect($server, $user, $password, $db);
